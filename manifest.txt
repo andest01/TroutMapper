@@ -1,0 +1,50 @@
+Nerdery RequireJS Boilerplate
+version 2.0.0
+http://js.nerderylabs.com/boilerplates
+
+/docs                                           
+    /js                                         /* After build process, JavaScript documentation will be placed here */
+    
+/tools
+    /bin
+        /node                                       
+        /linux                                  /* Standalone Node.js executables for Linux */
+        /mac                                    /* Standalone Node.js executables for Mac*/
+        /windows                                /* Standalone Node.js executables for Windows*/
+        
+    /build
+        /node_modules                           /* Grunt modules */
+        grunt.bat                               /* Runs grunt using standalone Node.js executable for Windows */
+        grunt.sh                                /* Runs grunt using standalone Node.js executable for Linux/Mac */
+        Gruntfile.js                            /* Defines the build tasks to be performed via `grunt` */
+        package.json                            /* Defines dependencies for this application that can be downloaded 
+        README.md                               /* Documentation on how to build the application */
+        which.sh                                /* Determines appropriate version of Node.js executable for Linux/Mac */
+        
+    /yuidoc                                     
+        /themes                                 /* Custom themes for YUIDoc documentation generator */
+            /nerdery-standard-theme             /* Nerdery-standard YUIDoc theme */                        
+
+/web
+    /assets
+        /fonts
+        /images
+        /scripts
+            /build                              /* After build process, built scripts will be placed here */
+            /src
+                /lib                            /* Custom libraries */
+                    Util.js                     /* Static class for common utility functions */
+                /lib-thirdparty                 /* 3rd-party libraries */
+                    jquery-*.js 
+                    jquery-ui-*.js
+                    require.js
+                /polyfills              
+                    function.bind.js            /* Polyfill for older browsers that do not support native Function.bind() */
+                    requestAnimationFrame.js    /* Polyfill for older browsers that do not support native requestAnimationFrame() */
+                /views
+                    SampleView.js               /* A sample view class */
+                App.js                          /* Initializes the application */
+                config.js                       /* Shared configuration file */
+                main.js                         /* Main entry point */
+        /styles
+        /uploads
