@@ -19,107 +19,150 @@
         <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
         <!-- STYLESHEETS -->
+        <link rel="stylesheet" media="screen, projection" href="assets/styles/reset.css" />
+        <link rel="stylesheet" media="screen, projection" href="assets/styles/960.css" />
         <link rel="stylesheet" media="screen, projection" href="assets/styles/screen.css" />
     </head>
-<body>
-    <div class="js-sample">
-        <div class="js-card card">
-            <div class="card-front">
-                <div>Awww.</div>The JavaScript boilerplate has not been initialized :-(
-            </div>
-            <div class="card-back">
-                <div>Success!</div>The JavaScript boilerplate has been initialized!
-            </div>
-        </div>
-    </div>
-    
-    <!-- SCRIPTS -->
-    <!--
-        These scripts should be the only external <script> includes on the page.
-        All other scripts will be loaded dynamically by RequireJs.
-    -->
-    <script src="assets/scripts/src/lib-thirdparty/require.js"></script>
-    <script src="assets/scripts/src/config.js"></script>
-    <script>
-        /**
-         * Global constants
-         * TODO: ideally all of these values would be filled in from the server side
-         */
-        window.SETTINGS = {};
-        
-        /**
-         * Indicates whether we are running on a production environment
-         *
-         * @constant
-         * @type {bool}
-         */
-        SETTINGS.IS_PRODUCTION = false;
-        
-         /**
-         * Set to true to allow application to output to browser console, false to silence all console output
-         * This should be set to `false` on production.
-         *
-         * @constant
-         * @type {bool}
-         */
-        SETTINGS.LOG_CONSOLE = SETTINGS.IS_PRODUCTION ? false : true;
+    <body>
+        <h1 class="pageHeading">Concept for Stu</h1>
+        <div class="container container_12">
+            <div class="wrapper grid_4 clearfix">
+                <div class="containerHeader">
+                    <div class="containerRow">
+                        <div class="grid_3 alpha">
+                            <h2 class="sectionTitle">Trout Valley Creek and text to go 2 lines</h2>
+                        </div>
+                        <div class="grid_1 omega">
+                            Closed
+                        </div>
+                    </div><!-- end .containerRow -->
+                </div><!-- end .containerHeader -->
 
-        /**
-         * Appended to query string for versioning of network resources (CSS, JavaScript, etc)
-         * This version number should be updated in production for every release.
-         *
-         * @constant
-         * @type {string}
-         */
-        SETTINGS.APP_VERSION = '1.0.0';
+                <div class="containerBody">
+                    <div class="containerRow">
+                        <img src="assets/images/stream-line.png" height="12" width="292" alt="" />
+                    </div><!-- end .containerRow -->
+                </div><!-- end .containerBody -->
 
-        /**
-         * Appended to query string to defeat caching of network resources (CSS, JavaScript, etc)
-         * Should be set to '' on production
-         *
-         * @constant
-         * @type {string}
-         */
-        SETTINGS.CACHE_BUSTER = SETTINGS.IS_PRODUCTION ? '' : Math.random();
+                <div class="containerFooter">
+                    <div class="containerRow">
+                        <div class="grid_3 alpha">
+                            <ul class="restrictions">
+                                <li>
+                                    Trout Valley Creek and a bunch of other text to go to atleast 2 lines
+                                </li>
+                                <li>
+                                    Trout Valley Creek and a bunch of other text to go to atleast 2 lines
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_1 omega">
+                            0.0/6.5
+                        </div>
+                    </div><!-- end .containerRow -->
+                </div><!-- end .containerFooter -->
+            </div><!-- end .wrapper -->
+        </div><!-- end .container -->
+    </body>
+<!--<body>-->
+    <!--<div class="js-sample">-->
+        <!--<div class="js-card card">-->
+            <!--<div class="card-front">-->
+                <!--<div>Awww.</div>The JavaScript boilerplate has not been initialized :-(-->
+            <!--</div>-->
+            <!--<div class="card-back">-->
+                <!--<div>Success!</div>The JavaScript boilerplate has been initialized!-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!---->
+    <!--&lt;!&ndash; SCRIPTS &ndash;&gt;-->
+    <!--&lt;!&ndash;-->
+        <!--These scripts should be the only external <script> includes on the page.-->
+        <!--All other scripts will be loaded dynamically by RequireJs.-->
+    <!--&ndash;&gt;-->
+    <!--<script src="assets/scripts/src/lib-thirdparty/require.js"></script>-->
+    <!--<script src="assets/scripts/src/config.js"></script>-->
+    <!--<script>-->
+        <!--/**-->
+         <!--* Global constants-->
+         <!--* TODO: ideally all of these values would be filled in from the server side-->
+         <!--*/-->
+        <!--window.SETTINGS = {};-->
+        <!---->
+        <!--/**-->
+         <!--* Indicates whether we are running on a production environment-->
+         <!--*-->
+         <!--* @constant-->
+         <!--* @type {bool}-->
+         <!--*/-->
+        <!--SETTINGS.IS_PRODUCTION = false;-->
+        <!---->
+         <!--/**-->
+         <!--* Set to true to allow application to output to browser console, false to silence all console output-->
+         <!--* This should be set to `false` on production.-->
+         <!--*-->
+         <!--* @constant-->
+         <!--* @type {bool}-->
+         <!--*/-->
+        <!--SETTINGS.LOG_CONSOLE = SETTINGS.IS_PRODUCTION ? false : true;-->
 
-        /**
-         * True to use a single, combined script on production environments
-         * This should be set to 'true' for production.
-         *
-         * @constant
-         * @type {bool}
-         */
-        SETTINGS.USE_COMBINED_JAVASCRIPT = SETTINGS.IS_PRODUCTION ? true : false;
-        
-        /**
-         * Root path for all JavaScript files
-         *
-         * @constant
-         * @type {string}
-         */
-        SETTINGS.SCRIPT_PATH = 'assets/scripts/' + (SETTINGS.USE_COMBINED_JAVASCRIPT ? 'build/' : 'src/');
-        
-        /**
-         * Set any RequireJs configuration that is dependent on dynamic configuration variables.
-         * Note that this config data is merged into any other require.config() statements defined elsewhere.
-         */
-        require.config(
-            {
-                baseUrl: SETTINGS.SCRIPT_PATH,
-                
-                // Params to append to the end of each js file request
-                urlArgs: 'v=' + SETTINGS.APP_VERSION + (SETTINGS.CACHE_BUSTER != '' ? '&bust=' + SETTINGS.CACHE_BUSTER : ''),
-                
-                // Timeout to load each js file, in seconds
-                waitSeconds: 120
-            }
-        );
-        
-        /**
-         * Set route and kick off RequireJs, which begins loading of scripts starting from main.js
-         */
-        var route = 'main';
-        require([route]);
-    </script>
-</body>
+        <!--/**-->
+         <!--* Appended to query string for versioning of network resources (CSS, JavaScript, etc)-->
+         <!--* This version number should be updated in production for every release.-->
+         <!--*-->
+         <!--* @constant-->
+         <!--* @type {string}-->
+         <!--*/-->
+        <!--SETTINGS.APP_VERSION = '1.0.0';-->
+
+        <!--/**-->
+         <!--* Appended to query string to defeat caching of network resources (CSS, JavaScript, etc)-->
+         <!--* Should be set to '' on production-->
+         <!--*-->
+         <!--* @constant-->
+         <!--* @type {string}-->
+         <!--*/-->
+        <!--SETTINGS.CACHE_BUSTER = SETTINGS.IS_PRODUCTION ? '' : Math.random();-->
+
+        <!--/**-->
+         <!--* True to use a single, combined script on production environments-->
+         <!--* This should be set to 'true' for production.-->
+         <!--*-->
+         <!--* @constant-->
+         <!--* @type {bool}-->
+         <!--*/-->
+        <!--SETTINGS.USE_COMBINED_JAVASCRIPT = SETTINGS.IS_PRODUCTION ? true : false;-->
+        <!---->
+        <!--/**-->
+         <!--* Root path for all JavaScript files-->
+         <!--*-->
+         <!--* @constant-->
+         <!--* @type {string}-->
+         <!--*/-->
+        <!--SETTINGS.SCRIPT_PATH = 'assets/scripts/' + (SETTINGS.USE_COMBINED_JAVASCRIPT ? 'build/' : 'src/');-->
+        <!---->
+        <!--/**-->
+         <!--* Set any RequireJs configuration that is dependent on dynamic configuration variables.-->
+         <!--* Note that this config data is merged into any other require.config() statements defined elsewhere.-->
+         <!--*/-->
+        <!--require.config(-->
+            <!--{-->
+                <!--baseUrl: SETTINGS.SCRIPT_PATH,-->
+                <!---->
+                <!--// Params to append to the end of each js file request-->
+                <!--urlArgs: 'v=' + SETTINGS.APP_VERSION + (SETTINGS.CACHE_BUSTER != '' ? '&bust=' + SETTINGS.CACHE_BUSTER : ''),-->
+                <!---->
+                <!--// Timeout to load each js file, in seconds-->
+                <!--waitSeconds: 120-->
+            <!--}-->
+        <!--);-->
+        <!---->
+        <!--/**-->
+         <!--* Set route and kick off RequireJs, which begins loading of scripts starting from main.js-->
+         <!--*/-->
+        <!--var route = 'main';-->
+        <!--require([route]);-->
+    <!--</script>-->
+<!--</body>-->
 </html>

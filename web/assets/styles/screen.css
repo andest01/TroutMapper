@@ -88,12 +88,12 @@ audio, canvas, video {
 /* ---------------------------------------------------------------------
  Form Reset Styles
 ------------------------------------------------------------------------ */
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration,
-input[type=search]::-webkit-search-results-button,
-input[type=search]::-webkit-search-results-decoration {
-    -webkit-appearance: none;
-}
+/*input[type=search]::-webkit-search-cancel-button,*/
+/*input[type=search]::-webkit-search-decoration,*/
+/*input[type=search]::-webkit-search-results-button,*/
+/*input[type=search]::-webkit-search-results-decoration {*/
+    /*-webkit-appearance: none;*/
+/*}*/
 
 input[type=search] {
     -webkit-appearance: none;
@@ -111,101 +111,55 @@ textarea {
 }
 
 /* ---------------------------------------------------------------------
- Sample styles 
- (samples only, remove this from your project's codebase)
+ Classes that came with the 960 grid demo
+------------------------------------------------------------------------ */
+body {
+    background: #123;
+    color: #333;
+    font-size: 11px;
+    height: auto;
+    padding-bottom: 20px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.container_12 {
+    background-color: #fff;
+    background-repeat: repeat-y;
+    margin-bottom: 20px;
+    background-image: url(../images/12_col.gif);
+}
+
+/* ---------------------------------------------------------------------
+ Throw-away Styles
 ------------------------------------------------------------------------ */
 
-.card {
-    position: absolute;
-    left: 25%;
-    top: 25%;
-    width: 50%;
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    -o-perspective: 800px;
-    perspective: 800px;
-}
-
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    padding: 40px; 
-    border-radius: 30px;
-    color: #ffffff;
+.pageHeading {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 30px;
+    margin: 20px 0;
     text-align: center;
-    font: 25px Georgia;
-    line-height: 2;
+    color: #ffffff;
 }
 
-.transition .card-front,
-.transition .card-back {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    
-    -webkit-transition: -webkit-transform .5s ease-in-out, visibility .5s ease-in-out;
-    -moz-transition: -moz-transform .5s ease-in-out, visibility .5s ease-in-out;
-    -o-transition: -o-transform .5s ease-in-out, visibility .5s ease-in-out;
-    transition: transform .5s ease-in-out, visibility .5s ease-in-out;
+/* ---------------------------------------------------------------------
+ Base Styles
+------------------------------------------------------------------------ */
+.sectionTitle {
+    line-height: 1.1875;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #463838;
 }
 
-.active  .card-front, 
-.active  .card-back {
-   color: #aaffff;
+.containerRow {
+    width: 100%;
+    margin: 0 0 5px 0;
+    padding-left: 3px;
+    overflow: hidden;
 }
 
-.card-front {
-    background-color: #ff0000;
-    box-shadow: 0 0 150px #ff0000;
-    
-    /* 3D-CSS compliant browsers */
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -o-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-
-    /* Non-3D-CSS compliant browsers */
-    visibility: visible;
-}
-
-.card-back {
-    background-color: #00aa00;
-    box-shadow: 0 0 150px #00aa00;
-    
-    /* 3D-CSS compliant browsers */
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-
-    /* Non-3D-CSS compliant browsers */
-    visibility: hidden;
-}
-
-.flipped .card-front {
-    /* For 3D-CSS compliant browsers */
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-
-    /* For non-3D-CSS compliant browsers */
-    visibility: hidden;
-}
-
-.flipped .card-back {
-    /* For 3D-CSS compliant browsers */
-    -webkit-transform: rotateY(0deg);
-    -moz-transform:  rotateY(0deg);
-    -o-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-
-    /* For non-3D-CSS compliant browsers */
-    visibility: visible;
+.restrictions li {
+    margin-bottom: 5px;
 }

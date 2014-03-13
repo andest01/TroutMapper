@@ -1,0 +1,77 @@
+/* ---------------------------------------------------------------------
+ Classes that came with the 960 grid demo 
+------------------------------------------------------------------------ */
+body {
+  background: #123;
+  color: #333;
+  font-size: 11px;
+  height: auto;
+  padding-bottom: 20px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.container_12 {
+  background-color: #fff;
+  background-repeat: repeat-y;
+  margin-bottom: 20px;
+  background-image: url(../img/12_col.gif);
+}
+
+/* ---------------------------------------------------------------------
+ Throw-away Styles
+------------------------------------------------------------------------ */
+
+.pageHeading {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------
+ Base Styles
+------------------------------------------------------------------------ */
+.sectionTitle {
+  line-height: 1.1875;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #463838;
+}
+
+.containerRow {
+  width: 100%;
+  margin: 0 0 5px 0;
+  padding-left: 3px;
+  overflow: hidden;
+}
+
+.restrictions li {
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
