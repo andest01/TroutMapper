@@ -24,11 +24,11 @@ define(function(require) {
     };
 
     proto.fromJSON = function(jsonString) {
-
+        throw new Error('not implemented yet');
     };
 
     proto.destroy = function() {
-
+        throw new Error('not implemented yet');
     };
     
     return StreamRatio;

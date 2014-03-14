@@ -3,12 +3,15 @@
  */
 define(function(require) {
     'use strict';
-    var WILD = 'Wild';
-    var STOCKED = 'Stocked';
 
     var Constants = {
-
+        WILD: 'Wild',
+        STOCKED: 'Stocked',
+        WMA: 'WMA',
+        WMA_TEXT: 'Wildlife Management Area',
+        STATE_PARK: 'State Park',
+        EASEMENT: 'Easement'
     };
 
-
+    return Constants;
 });

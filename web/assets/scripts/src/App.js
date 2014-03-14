@@ -13,6 +13,7 @@ define(function(require) {
     var Util = require('lib/Util');
     var SampleView = require('views/SampleView');
 
+
     /**
      * Initial application setup. Runs once upon every page load.
      *
@@ -32,7 +33,17 @@ define(function(require) {
     App.prototype.init = function() {
         // Create your views here
         // Pass in a jQuery reference to DOM elements that need functionality attached to them
-        var sampleView = new SampleView($('.js-sample'));
+        var streams = require('data/dummyStreamLine');
+        var StreamLine = require('models/StreamLine');
+        debugger;
+        var i = streams.length;
+        while(i--) {
+            var stream = streams[i];
+            var streamLine = new StreamLine();
+            streamLine.fromJSON(stream);
+        }
+        //var sampleView = new SampleView($('.js-sample'));
+
         
         Util.log('Success! The JavaScript boilerplate has been initialized!');
     };
