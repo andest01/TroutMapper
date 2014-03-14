@@ -33,15 +33,22 @@ define(function(require) {
     App.prototype.init = function() {
         // Create your views here
         // Pass in a jQuery reference to DOM elements that need functionality attached to them
+        debugger;
         var streams = require('data/dummyStreamLine');
         var StreamLine = require('models/StreamLine');
-        debugger;
-        var i = streams.length;
-        while(i--) {
-            var stream = streams[i];
+        var streamLines = streams.map(function(json) {
             var streamLine = new StreamLine();
-            streamLine.fromJSON(stream);
-        }
+            streamLine.fromJSON(json);
+            return streamLine;
+        });
+
+        debugger;
+//        var i = streams.length;
+//        while(i--) {
+//            var stream = streams[i];
+//            var streamLine = new StreamLine();
+//            streamLine.fromJSON(stream);
+//        }
         //var sampleView = new SampleView($('.js-sample'));
 
         

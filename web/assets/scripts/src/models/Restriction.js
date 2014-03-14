@@ -45,4 +45,13 @@ define(function(require) {
     Restriction.prototype.setOfficialText = function(officialText) {
         this.officialText = officialText;
     };
+
+    Restriction.prototype.fromJSON = function(json) {
+        this.setSummary(json.summary);
+        this.setIsAnglingRestriction(json.isAnglingRestriction);
+        this.setIsHarvestingRestriction(json.isHarvestRestriction);
+        this.setOfficialText(json.officialText);
+    };
+
+    return Restriction;
 });

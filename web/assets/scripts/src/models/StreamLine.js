@@ -8,6 +8,13 @@ define(function(require) {
     var Species = require('models/Species');
     var LinearReferenceSegment = require('models/LinearReferenceSegment');
 
+    var RestrictionSegment = require('models/RestrictionSegment');
+    var Restriction = require('models/Restriction');
+
+    var PublicLandSegment = require('models/PublicLandSegment');
+    var PublicLand = require('models/PublicLand');
+
+
     var StreamLine = function() {
         Base.prototype.constructor.call(this);
         this.init();
@@ -20,17 +27,17 @@ define(function(require) {
         this.streamName = '';
         this.streamLength = 0;
         this.publiclAccessibleLength = 0;
-        this.regulationSegments = [];
+        this.restrectionSegments = [];
         this.publicAccessSegments = [];
         this.species = [];
     };
 
-    proto.getRegulationSegments = function() {
-        return this.regulationSegments;
+    proto.getRestrictionSegment = function() {
+        return this.restrectionSegments;
     };
 
-    proto.setRegulationSegments = function(segments) {
-        this.regulationSegments = segments;
+    proto.setRestrictionSegments = function(segments) {
+        this.restrectionSegments = segments;
     };
 
     proto.getPublicAccessSegments = function() {
@@ -49,21 +56,44 @@ define(function(require) {
         this.species = species;
     };
 
-    proto.fromJSON = function(jsonString) {
-        debugger;
+    proto.fromJSON = function(json) {
         // how can i defer to the functionality of the base type Stream's fromJSON functionality?
-        this.setStreamId(jsonString.gid);
-        this.setStreamName(jsonString.kittle_nam);
-        this.setStreamLength(jsonString.length_mi);
+        this.setStreamId(json.gid);
+        this.setStreamName(json.kittle_nam);
+        this.setStreamLength(json.length_mi);
 
-        if (jsonString.species != null) {
-            var species = jsonString.species.map(function(speciesJson) {
-                debugger;
+        if (json.species != null) {
+            var species = json.species.map(function(speciesJson) {
                 return new Species(speciesJson.id, speciesJson.name, speciesJson.isStocked);
             });
             this.setSpecies(species);
         }
 
+        if (json.restrictions != null) {
+
+            var restrictions = json.restrictions.map(function(restrictionLocationJson) {
+                var restriction = new Restriction();
+                restriction.fromJSON(restrictionLocationJson.restriction);
+                var start = restrictionLocationJson.start;
+                var stop = restrictionLocationJson.stop;
+                var restrictionSegment = new RestrictionSegment(start, stop, restriction);
+                return restrictionSegment;
+            });
+            this.setRestrictionSegments(restrictions);
+
+        }
+
+        if (json.publicLand != null) {
+            var publicLandSegments = json.publicLand.map(function(publicLandSegmentJson) {
+                var publicLand = new PublicLand();
+                publicLand.fromJSON(publicLandSegmentJson.type);
+                var start = publicLandSegmentJson.start;
+                var stop = publicLandSegmentJson.stop;
+                var publicLandSegment = new PublicLandSegment(start, stop, publicLand);
+                return publicLandSegment;
+            });
+            this.setPublicAccessSegments(publicLandSegments);
+        }
     };
 
     return StreamLine;

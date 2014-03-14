@@ -6,12 +6,23 @@ define(function(require) {
     'use strict';
 
     var Base = require('models/LinearReferenceSegment');
+    
 
-    var PublicLand = function(start, stop) {
+    var PublicLandSegment = function(start, stop, landType) {
         Base.prototype.constructor.call(this, start, stop);
+        Base.prototype.init.call(this, start, stop);
+        this.landType = landType;
     };
 
-    PublicLand.prototype = new Base();
+    PublicLandSegment.prototype = new Base();
 
-    return PublicLand;
+    PublicLandSegment.prototype.getLandType = function() {
+        return this.landType;
+    };
+    
+    PublicLandSegment.prototype.setLandType = function(landType) {
+        this.landType = landType;
+    };
+
+    return PublicLandSegment;
 });
