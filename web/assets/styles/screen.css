@@ -115,7 +115,7 @@ textarea {
 ------------------------------------------------------------------------ */
 body {
     background: #123;
-    color: #333;
+    color: #463838;;
     font-size: 11px;
     height: auto;
     padding-bottom: 20px;
@@ -126,13 +126,12 @@ body {
     background-color: #fff;
     background-repeat: repeat-y;
     margin-bottom: 20px;
-    background-image: url(../images/12_col.gif);
+    /*background-image: url(../images/12_col.gif);*/
 }
 
 /* ---------------------------------------------------------------------
  Throw-away Styles
 ------------------------------------------------------------------------ */
-
 .pageHeading {
     font-family: Georgia, serif;
     font-weight: normal;
@@ -145,6 +144,33 @@ body {
 /* ---------------------------------------------------------------------
  Base Styles
 ------------------------------------------------------------------------ */
+.wrapper {
+    overflow: hidden;
+}
+
+.containerRow {
+    width: 100%;
+    margin: 0 0 5px 0;
+    overflow: hidden;
+}
+
+.statusContainer {
+    display: table;
+    width: 100%;
+}
+
+.fractionContainer {
+    text-align: right;
+}
+
+.restrictions li {
+    margin-bottom: 5px;
+}
+
+/* ---------------------------------------------------------------------
+ Text Styles
+------------------------------------------------------------------------ */
+
 .sectionTitle {
     line-height: 1.1875;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -153,13 +179,61 @@ body {
     color: #463838;
 }
 
-.containerRow {
-    width: 100%;
-    margin: 0 0 5px 0;
-    padding-left: 3px;
-    overflow: hidden;
+.statusIcon {
+    display: table-cell;
+    height: 18px;
+    width: 18px;
+    margin-right: 3px;
 }
 
-.restrictions li {
-    margin-bottom: 5px;
+.statusText {
+    display: table-cell;
+    color: #ce4e27;
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.numerator {
+    font-size: 12px;
+    color: #acbb39;
+}
+
+.species.brook {
+    fill: #acbb39;
+}
+
+.species.brown {
+    fill: #fccc14;
+}
+
+.species.rainbow {
+    fill: #ce4e27;
+}
+
+.species.stocked {
+    stroke: #463838;
+    stroke-width: 1px;
+}
+
+.species.not-present {
+    fill: #ebebeb;
+}
+
+.axis text {
+    display: none;
+}
+
+.axis path.domain {
+    fill: #4e7f84;
+    /*stroke: #463838;*/
+    /*stroke: blue;*/
+    /*stroke-width: 5px;*/
+    /*shape-rendering: crispEdges;*/
+    stroke-linecap: round;
+}
+
+.axis line {
+    fill: none;
+    stroke: #000;
+    /*shape-rendering: crispEdges;*/
 }
