@@ -11,7 +11,6 @@ define(function(require) {
     
     var $ = require('jquery');
     var Util = require('lib/Util');
-    var SampleView = require('views/SampleView');
 
 
 
@@ -43,41 +42,48 @@ define(function(require) {
             return streamLine;
         });
 
-        debugger;
+        var stream = streamLines[0];
 
+        var width = 290;
         var d3SvgCanvas = d3.select('#linear-reference').append('svg')
             .attr('class', 'axis')
             .attr('width', 292)
-            .attr('height', 40);
+            .attr('height', 20);
+
+        var segments = stream.getPublicAccessSegments();
+        for (var i = 0; i < segments.length; i++) {
+            var segment = segments[i];
+            var x = segment.start * width;
+            var m = (segment.stop * width) - x;
+
+            d3SvgCanvas.append('rect')
+                .attr('x', segment.start * width)
+                .attr('y', 4)
+                .attr('width', m)
+                .attr('height', 11)
+                .attr('rx', 4)
+                .attr('ry', 4)
+                .attr('class', 'public-land');
+        }
+
+
 
         var axisScale = d3.scale.linear()
-            .domain([0, 19.8])
+            .domain([0, stream.getStreamLength()])
             .range([0, 290]);
 
         var axis = d3.svg.axis()
             .scale(axisScale)
             .orient('bottom')
-            .ticks(10)
+            .ticks(stream.getStreamLength())
             .outerTickSize([4])
-            .innerTickSize([8]);
+            .innerTickSize([7]);
 
         d3SvgCanvas.append('g')
             .attr("transform", function(){
-                return "translate(0, 10)";
+                return "translate(0, 8)";
             })
             .call(axis);
-
-
-//        var i = streams.length;
-//        while(i--) {
-//            var stream = streams[i];
-//            var streamLine = new StreamLine();
-//            streamLine.fromJSON(stream);
-//        }
-        //var sampleView = new SampleView($('.js-sample'));
-
-        
-        Util.log('Success! The JavaScript boilerplate has been initialized!');
     };
 
     return App;

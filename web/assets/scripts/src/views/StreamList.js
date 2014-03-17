@@ -4,14 +4,15 @@
 
 define(function(require) {
     'use strict';
-    var StreamList = function() {
-        this.init();
+    var d3 = require('d3');
+    var StreamList = function(elementRoot) {
+        this.init(elementRoot);
     };
 
     var proto = StreamList.prototype;
 
-    proto.init = function() {
-        
+    proto.init = function(elementRoot) {
+        this.root = elementRoot;
     };
 
     proto.setupHandlers = function() {

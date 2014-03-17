@@ -7,8 +7,8 @@ define(function (require) {
             "objectid":24913,
             "kittle_nbr":"H-001-030-018-007",
             "kittle_nam":"Harrigan Creek",
-            "route_mi":0.547000000000,
-            "length_mi":0.547000000000,
+            "route_mi":17.547000000000,
+            "length_mi":17.547000000000,
             "trout_flag":1,
             "publicLand":[
                 {
