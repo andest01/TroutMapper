@@ -42,7 +42,6 @@ http://js.nerderylabs.com/boilerplates
                     function.bind.js            /* Polyfill for older browsers that do not support native Function.bind() */
                     requestAnimationFrame.js    /* Polyfill for older browsers that do not support native requestAnimationFrame() */
                 /views
-                    SampleView.js               /* A sample view class */
                 App.js                          /* Initializes the application */
                 config.js                       /* Shared configuration file */
                 main.js                         /* Main entry point */

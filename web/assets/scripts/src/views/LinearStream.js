@@ -14,5 +14,37 @@ define(function(require) {
         
     };
 
+    proto.setupHandlers = function() {
+
+    };
+
+    proto.createChildren = function() {
+
+    };
+
+    proto.layout = function() {
+
+    };
+
+    proto.enable = function() {
+
+    };
+
+    proto.disable = function() {
+
+    };
+
+    proto.destroy = function() {
+
+    };
+
+    proto.render = function() {
+
+    };
+
+    proto.redraw = function() {
+
+    };
+
     return LinearStream;
 });

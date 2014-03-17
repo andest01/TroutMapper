@@ -11,6 +11,38 @@ define(function(require) {
     var proto = StreamAccessibilityIcon.prototype;
 
     proto.init = function() {
+        
+    };
+
+    proto.setupHandlers = function() {
+
+    };
+
+    proto.createChildren = function() {
+
+    };
+
+    proto.layout = function() {
+
+    };
+
+    proto.enable = function() {
+
+    };
+
+    proto.disable = function() {
+
+    };
+
+    proto.destroy = function() {
+
+    };
+
+    proto.render = function() {
+
+    };
+
+    proto.redraw = function() {
 
     };
 
