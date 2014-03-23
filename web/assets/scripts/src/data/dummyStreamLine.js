@@ -39,8 +39,8 @@ define(function (require) {
             ],
             "restrictions":[
                 {
-                    "start":0.0,
-                    "stop":0.2,
+                    "start":0.1,
+                    "stop":0.465,
                     "restriction":{
                         "summary":"12-16 inch no harvest. No Bait.",
                         "officialText":"Lorem ipusm dolar set amet yada yada keeps going until it wraps",
@@ -54,7 +54,9 @@ define(function (require) {
                     "restriction":{
                         "summary":"Fish sanctuary. Harvest permitted only between July 1st and August 31st.",
                         "officialText":"Lorem ipusm dolar set amet yada yada keeps going until it wraps a few times and maybe some more",
-                        "isAnglingRestriction":true
+                        "isAnglingRestriction":true,
+                        "isHarvestRestriction":true
+
                     }
                 }
             ],

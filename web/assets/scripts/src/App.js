@@ -33,7 +33,8 @@ define(function(require) {
     App.prototype.init = function() {
         // Create your views here
         // Pass in a jQuery reference to DOM elements that need functionality attached to them
-        var streams = require('data/dummyStreamLine');
+        var streams = require('data/dummyStreamLineBeta');
+        debugger;
         var d3 = require('d3');
         var StreamLine = require('models/StreamLine');
         var streamLines = streams.map(function(json) {
